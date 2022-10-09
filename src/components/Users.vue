@@ -143,13 +143,7 @@ export default {
       }
     },
     onSearchUser(searchedStr) {
-      console.log("here in users", searchedStr);
       this.$emit("search-user", searchedStr);
-    },
-  },
-  watch: {
-    isSelectAll() {
-      console.log("isSelectAll has changed", this.isSelectAll);
     },
   },
 };
@@ -157,12 +151,6 @@ export default {
 <style scoped>
 .text-left {
   align-items: start;
-}
-.table {
-  overflow-y: scroll;
-}
-th {
-  font-weight: 500;
 }
 .border-rounded-left {
   max-width: 100px;

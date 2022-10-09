@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="users-count-container">
     <span class="users-count">Showing {{ users }} users</span>
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style scoped>
-div {
+.users-count-container {
   width: 160px;
   font-size: 14px;
   margin-bottom: 0.6rem;
@@ -28,5 +28,6 @@ div {
   border-radius: 4px;
   border: 1px solid #015cc8;
   padding: 0.4rem 0.8rem;
+  display: inline-block;
 }
 </style>

@@ -86,7 +86,6 @@ button {
 }
 .current-page {
   border: none;
-  /* background: cornflowerblue; */
   background-color: #015cc8;
   color: white;
 }

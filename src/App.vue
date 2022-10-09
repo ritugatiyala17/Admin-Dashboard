@@ -22,7 +22,6 @@
     </div>
 
     <div class="users-list">
-      <!-- <Loading v-if="loading" /> -->
       <Users
         :key="renderComponentKey"
         :usersList="currentPageUsers"
@@ -50,7 +49,6 @@
 <script>
 import axios from "axios";
 
-// import Loading from "./components/states/Loading.vue";
 import SearchBar from "./components/SearchBar.vue";
 import ActionsBar from "./components/ActionsBar.vue";
 
@@ -61,7 +59,6 @@ import UserStatus from "./components/UserStatus.vue";
 export default {
   name: "App",
   components: {
-    // Loading,
     SearchBar,
     ActionsBar,
     Users,
@@ -76,7 +73,6 @@ export default {
       searchString: "",
       renderComponentKey: false,
       listHeaders: [],
-      // loading: false,
     };
   },
   computed: {
@@ -101,7 +97,6 @@ export default {
     },
   },
   created() {
-    // this.loading = true;
     axios
       .get(
         "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"
@@ -114,10 +109,8 @@ export default {
             (key) => key !== "id" && key !== "checked"
           );
         }
-        // this.setLoader();
       })
       .catch((err) => {
-        console.log(err.message);
         throw Error(err);
       });
   },
@@ -125,14 +118,7 @@ export default {
     onRowSelection(id) {
       let user = this.users.find((user) => user.id == id);
       if (user) {
-        // if (this.selectedUsers.findIndex((user) => user.id == id) > -1) {
-        //   let userAlreadySelected = this.selectedUsers.findIndex(
-        //     (user) => user.id === id
-        //   );
-        //   this.selectedUsers.splice(userAlreadySelected, 1);
-        // } else {
         this.selectedUsers.push(user);
-        // }
       }
     },
     onRowUnselection(id) {
@@ -145,7 +131,6 @@ export default {
       }
     },
     onRowDeletion(id) {
-      console.log("onRowDeletion", id);
       if (this.currentPageUsers.length == 1 && this.currentPage !== 1) {
         this.currentPage -= 1;
       }
@@ -159,13 +144,10 @@ export default {
       }
     },
     onSearchUser(searchString) {
-      // this.setLoader();
-      console.log("onSearchUser", searchString);
       this.searchString = searchString;
       this.currentPage = 1;
     },
     onDeleteSelectedUsers() {
-      // this.setLoader();
       if (
         this.selectedUsers.length == this.currentPageUsers.length &&
         this.currentPage !== 1
@@ -187,22 +169,14 @@ export default {
       for (let user of this.users) {
         delete user.checked;
       }
-      console.log("onUnselectUsers", this.selectedUsers);
     },
     onSelectAll() {
       this.selectedUsers = [...this.currentPageUsers];
-      console.log("SelectUsers", this.selectedUsers);
     },
     onPageChange(pageNum) {
       this.currentPage = pageNum;
       this.onUnselectUsers();
     },
-    // setLoader() {
-    //   this.loading = true;
-    //   setTimeout(() => {
-    //     this.loading = false;
-    //   }, 200);
-    // },
   },
   watch: {},
 };
@@ -214,7 +188,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  /* color: #1667b8 !important; */
   margin: 2rem;
   box-sizing: border-box;
 }
