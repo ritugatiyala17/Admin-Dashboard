@@ -1,5 +1,7 @@
 # admin-dashboard
 
+For live demo - https://admin-dashboard-users.netlify.app/
+
 ## Project setup
 ```
 npm install
