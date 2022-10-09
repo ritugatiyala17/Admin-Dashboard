@@ -20,6 +20,7 @@ export default {
 div {
   width: 160px;
   font-size: 14px;
+  margin-bottom: 0.6rem;
 }
 .users-count {
   background-color: white;

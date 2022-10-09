@@ -70,7 +70,7 @@ input {
   width: 100%;
   border: none;
   border-radius: 4px;
-  padding: 0.5rem;
+  padding: 0.4rem 0.8rem;
   outline: none;
 }
 input::placeholder {

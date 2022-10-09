@@ -6,8 +6,8 @@
     <button class="mr-3 delete-button" @click="onDeleteSelectedUsers">
       <i class="fa fa-trash fa-sm" aria-hidden="true"></i> Delete Selected
     </button>
-    <span @click="onUnselectUsers">
-      <i class="fa-solid fa-x fa-sm cursor-pointer"></i>
+    <span @click="onUnselectUsers" class="ml-1">
+      <i class="fa-solid fa-x fa-xs cursor-pointer"></i>
     </span>
   </div>
 </template>
@@ -38,6 +38,7 @@ export default {
   flex-direction: row;
   justify-content: start;
   align-items: center;
+  margin-bottom: 0.6rem;
 }
 svg {
   font-size: 48px;
@@ -64,7 +65,7 @@ mr-3 {
   padding: 0.4rem 0.8rem;
   font-size: 14px;
 }
-.fa-x {
-  color: red;
+.ml-1 {
+  margin-left: 1rem;
 }
 </style>
