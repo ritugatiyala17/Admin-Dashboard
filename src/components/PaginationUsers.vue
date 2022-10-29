@@ -13,14 +13,28 @@
     >
       <i class="fa-solid fa-angle-left"></i>
     </button>
+    <span
+      v-if="remaingingPages && currentPage !== 1"
+      :disabled="true"
+      class="show-more-pages"
+    >
+      ...
+    </span>
     <button
-      v-for="page in totalPages"
+      v-for="page in pagesToShow"
       :key="page"
       @click="onPageChange(page)"
       :class="currentPage === page ? 'current-page' : ''"
     >
       {{ page }}
     </button>
+    <span
+      v-if="remaingingPages && currentPage !== totalPages"
+      :disabled="true"
+      class="show-more-pages"
+    >
+      ...
+    </span>
     <button
       @click="onPageChange(currentPage + 1)"
       :disabled="!activateNextPage"
@@ -51,7 +65,9 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      maxUserPagesVisible: 3,
+    };
   },
   computed: {
     activateFirstPage() {
@@ -65,6 +81,14 @@ export default {
     },
     activateNextPage() {
       return this.currentPage !== this.totalPages;
+    },
+    pagesToShow() {
+      return Array(this.maxUserPagesVisible)
+        .fill(0)
+        .map((_, i) => i + 1);
+    },
+    remaingingPages() {
+      return this.totalPages > this.pagesToShow.length;
     },
   },
   methods: {
@@ -95,5 +119,8 @@ button {
 }
 .fa-solid {
   -webkit-text-stroke: 1px white;
+}
+.show-more-pages {
+  padding-right: 1rem;
 }
 </style>
