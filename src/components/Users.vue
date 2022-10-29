@@ -168,6 +168,6 @@ export default {
   align-items: center;
   background-color: #e9ecef;
   border-color: #dee2e6;
-  margin-right: 10rem;
+  margin-right: 8rem;
 }
 </style>

@@ -1,6 +1,10 @@
 <template>
   <div @click="onDeleteUser">
-    <i class="fa fa-trash danger" aria-hidden="true"></i>
+    <i
+      class="delete-user-single-button fa fa-trash"
+      aria-hidden="true"
+      @click="onDeleteUser"
+    ></i>
   </div>
 </template>
 
@@ -14,3 +18,10 @@ export default {
   },
 };
 </script>
+<style scoped>
+.delete-user-single-button:hover {
+  font-size: 1.3rem;
+  color: red;
+  transition: 0.2s ease-out;
+}
+</style>

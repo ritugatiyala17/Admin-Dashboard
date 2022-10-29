@@ -18,7 +18,6 @@ export default {
 
 <style scoped>
 .users-count-container {
-  width: 160px;
   font-size: 14px;
   margin-bottom: 1rem;
 }

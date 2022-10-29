@@ -188,6 +188,7 @@ export default {
 .menu-bar {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 .justify-content-between {
   justify-content: space-between;
