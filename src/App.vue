@@ -46,7 +46,9 @@ import SearchBar from "./components/SearchBar.vue";
 import ActionsBar from "./components/ActionsBar.vue";
 
 import Users from "./components/Users.vue";
-import PaginationUsers from "./components/PaginationUsers.vue";
+// import PaginationUsers from "./components/PaginationUsers.vue";
+import PaginationUsers from "./components/PaginationUsersList.vue";
+
 import UserStatus from "./components/UserStatus.vue";
 
 export default {
