@@ -1,13 +1,6 @@
 <template>
   <div id="app">
-    <div
-      class="menu-bar"
-      :class="
-        selectedUsers.length > 0
-          ? 'justify-content-between'
-          : 'justify-content-end'
-      "
-    >
+    <div class="menu-bar justify-content-between">
       <UserStatus
         v-show="selectedUsers.length === 0"
         :users="filteredUsers.length"
@@ -201,9 +194,6 @@ export default {
 }
 .justify-content-start {
   justify-content: start;
-}
-.justify-content-end {
-  justify-content: end;
 }
 .users-list {
   scroll-behavior: smooth;

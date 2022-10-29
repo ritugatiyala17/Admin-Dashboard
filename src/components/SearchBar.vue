@@ -48,7 +48,7 @@ export default {
 
 <style scoped>
 .search-container {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   flex-direction: row;
   justify-content: end;
@@ -57,7 +57,6 @@ export default {
   padding: 0;
 }
 .input-container {
-  width: 30%;
   border-radius: 4px;
   border: 1px lightgray solid;
   display: flex;
@@ -67,14 +66,15 @@ export default {
   margin-bottom: 1rem;
 }
 input {
-  width: 100%;
+  min-width: 200px;
   border: none;
   border-radius: 4px;
   padding: 0.4rem 0.8rem;
   outline: none;
 }
 input::placeholder {
-  font: 14px sans-serif;
+  font: 13px sans-serif;
+  text-overflow: ellipsis;
 }
 .search-icon {
   padding-right: 1rem;

@@ -20,14 +20,14 @@ export default {
 .users-count-container {
   width: 160px;
   font-size: 14px;
-  margin-bottom: 0.6rem;
+  margin-bottom: 1rem;
 }
 .users-count {
   background-color: white;
   color: #015cc8;
   border-radius: 4px;
   border: 1px solid #015cc8;
-  padding: 0.4rem 0.8rem;
+  padding: 0.5rem 0.8rem;
   display: inline-block;
 }
 </style>
