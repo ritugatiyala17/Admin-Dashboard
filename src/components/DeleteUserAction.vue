@@ -1,5 +1,5 @@
 <template>
-  <div @click="onDeleteUser">
+  <div>
     <i
       class="delete-user-single-button fa fa-trash"
       aria-hidden="true"
